@@ -1,0 +1,261 @@
+.hero {
+    position: relative;
+    /* importante para que los absolute hijos se posicionen relativo aquí */
+    display: flex;
+    flex-direction: column;
+    /* apila verticalmente */
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    z-index: 1;
+    /* para que quede sobre los backgrounds */
+    gap: 20px;
+    /* espacio entre logo y título */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: translateY(60%);
+    transition: none;
+    z-index: 0;
+    /* quedan detrás del logo */
+}
+
+/* Posicionamiento de columnas */
+.bg-1 {
+    left: 0%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-2 {
+    left: 25%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.bg-3 {
+    left: 50%;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.bg-4 {
+    left: 75%;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Estados ocultos */
+.hidden {
+    opacity: 0;
+    transform: translateY(60%);
+}
+
+/* Animaciones de entrada */
+.slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.slide-down {
+    animation: slideDown 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-60%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Contenedor principal del logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0;
+    /* eliminar cualquier espacio entre los items */
+}
+
+/* Partes del logo */
+.logo-part {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: none;
+    margin: 0;
+    /* eliminar márgenes posibles */
+    padding: 0;
+    margin-left: -20px;
+}
+
+/* Parte lateral izquierda y derecha */
+.logo-part:nth-child(1),
+.logo-part:nth-child(3) {
+    width: 80px;
+    height: auto;
+}
+
+/* Parte central */
+.logo-part:nth-child(2) {
+    width: 100px;
+    height: auto;
+}
+
+/* Las imágenes dentro de cada parte */
+.logo-part img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Animaciones para el logo */
+.logo-slide-up {
+    animation: logoSlideUp 0.8s ease-out forwards;
+}
+
+.logo-slide-down {
+    animation: logoSlideDown 0.8s ease-out forwards;
+}
+
+@keyframes logoSlideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes logoSlideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-title {
+    margin: 0;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    /* para que z-index funcione */
+}
+
+.hero-title .fuente-1,
+.hero-title .fuente-2 {
+    display: block;
+    /* cada span ocupa una línea completa */
+}
+
+.hero-title .fuente-1 {
+    font-family: var(--fuente-1);
+    font-size: 3.8rem;
+    margin-bottom: -15px;
+    /* espacio entre los dos */
+}
+
+.hero-title .fuente-2 {
+    font-family: var(--fuente-2);
+    font-size: 1.8rem;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .background-image {
+        width: 25%;
+    }
+
+    .logo {
+        height: 150px;
+    }
+
+    .logo-part:nth-child(1) {
+        width: 60px;
+        height: 120px;
+    }
+
+    .logo-part:nth-child(2) {
+        width: 90px;
+        height: 150px;
+    }
+
+    .logo-part:nth-child(3) {
+        width: 60px;
+        height: 120px;
+    }
+
+    .restart-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+}
+
+.info-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.info-section p,
+.info-section ul,
+.info-section blockquote {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.info-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.info-section blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    color: #777;
+}

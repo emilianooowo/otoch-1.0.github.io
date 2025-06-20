@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Animado</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="shared/global.css">
+</head>
+
+<body>
+    <div class="hero">
+        <!-- Imagen 1 - sale de abajo -->
+        <div class="background-image bg-1 hidden" data-direction="up"></div>
+
+        <!-- Imagen 2 - sale de arriba -->
+        <div class="background-image bg-2 hidden" data-direction="down"></div>
+
+        <!-- Imagen 3 - sale de abajo -->
+        <div class="background-image bg-3 hidden" data-direction="up"></div>
+
+        <!-- Imagen 4 - sale de arriba -->
+        <div class="background-image bg-4 hidden" data-direction="down"></div>
+
+        <!-- Logo dividido en 3 partes -->
+        <div class="logo">
+            <!-- Parte 1 -->
+            <div class="logo-part" data-logo-direction="down">
+                <img src="assets/logos/side.png" alt="Logo lateral">
+            </div>
+
+            <!-- Parte 2 -->
+            <div class="logo-part" data-logo-direction="up">
+                <img src="assets/logos/mid.png" alt="Logo central">
+            </div>
+
+            <!-- Parte 3 -->
+            <div class="logo-part" data-logo-direction="down">
+                <img src="assets/logos/side.png" alt="Logo lateral">
+            </div>
+        </div>
+
+        <h1 class="hero-title">
+            <span class="fuente-1">OTOCH</span>
+            <span class="fuente-2">ARQUITECTOS</span>
+        </h1>
+    </div>
+
+    <section class="info-section">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            Somos una empresa dedicada a ofrecer soluciones innovadoras para el desarrollo de proyectos creativos.
+            Nuestro equipo está comprometido con la excelencia, la calidad y la atención personalizada.
+        </p>
+    </section>
+
+    <section class="info-section">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Diseño gráfico y branding</li>
+            <li>Desarrollo web y aplicaciones móviles</li>
+            <li>Marketing digital y posicionamiento SEO</li>
+            <li>Producción audiovisual</li>
+        </ul>
+    </section>
+
+    <section class="info-section">
+        <h2>Testimonios</h2>
+        <blockquote>
+            "Gracias al equipo, logramos lanzar nuestro producto en tiempo récord y con resultados excelentes."
+        </blockquote>
+        <cite>- Cliente satisfecho</cite>
+    </section>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
