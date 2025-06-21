@@ -7,35 +7,72 @@
     <title>Hero Animado</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="shared/global.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
+    <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href=""><i class="bi bi-buildings"></i> boton</a>
+            <a href=""><i class="bi bi-tools"></i> boton</a>
+            <a href=""><i class="bi bi-people-fill"></i> boton</a>
+            <a href=""><i class="bi bi-envelope-fill"></i> boton</a>
+
+            <div class="mobile-social-separator"></div>
+
+            <div class="mobile-social-links">
+                <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header" id="dynamicHeader">
+        <div class="header-content">
+            <div class="logo-header">
+                <img id="logoImg" src="assets/logos/logo.png" alt="">
+                <img id="logoImg" src="shared/logos/logo-largo-blanco.webp" alt="Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="">boton</a>
+                <a href=""> boton</a>
+                <a href=""> boton</a>
+                <a href=""> boton</a>
+
+                <div class="social-separator"></div>
+
+                <div class="social-links">
+                    <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <div class="hero">
-        <!-- Imagen 1 - sale de abajo -->
         <div class="background-image bg-1 hidden" data-direction="up"></div>
 
-        <!-- Imagen 2 - sale de arriba -->
         <div class="background-image bg-2 hidden" data-direction="down"></div>
 
-        <!-- Imagen 3 - sale de abajo -->
         <div class="background-image bg-3 hidden" data-direction="up"></div>
 
-        <!-- Imagen 4 - sale de arriba -->
         <div class="background-image bg-4 hidden" data-direction="down"></div>
 
-        <!-- Logo dividido en 3 partes -->
         <div class="logo">
-            <!-- Parte 1 -->
             <div class="logo-part" data-logo-direction="down">
                 <img src="assets/logos/side.png" alt="Logo lateral">
             </div>
 
-            <!-- Parte 2 -->
             <div class="logo-part" data-logo-direction="up">
                 <img src="assets/logos/mid.png" alt="Logo central">
             </div>
 
-            <!-- Parte 3 -->
             <div class="logo-part" data-logo-direction="down">
                 <img src="assets/logos/side.png" alt="Logo lateral">
             </div>
@@ -47,6 +84,31 @@
         </h1>
     </div>
 
+    <section class="info-section">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            Somos una empresa dedicada a ofrecer soluciones innovadoras para el desarrollo de proyectos creativos.
+            Nuestro equipo está comprometido con la excelencia, la calidad y la atención personalizada.
+        </p>
+    </section>
+
+    <section class="info-section">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Diseño gráfico y branding</li>
+            <li>Desarrollo web y aplicaciones móviles</li>
+            <li>Marketing digital y posicionamiento SEO</li>
+            <li>Producción audiovisual</li>
+        </ul>
+    </section>
+
+    <section class="info-section">
+        <h2>Testimonios</h2>
+        <blockquote>
+            "Gracias al equipo, logramos lanzar nuestro producto en tiempo récord y con resultados excelentes."
+        </blockquote>
+        <cite>- Cliente satisfecho</cite>
+    </section>
     <section class="info-section">
         <h2>Sobre Nosotros</h2>
         <p>

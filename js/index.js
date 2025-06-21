@@ -1,3 +1,67 @@
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.getElementById('dynamicHeader');
+    const logoImg = document.getElementById('logoImg');
+
+    const logoBlanco = '';
+    const logoNegro = 'assets/logos/logo.png';
+
+    let ticking = false;
+
+    function updateHeader() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > 430) {
+            header.classList.add('scrolled');
+            logoImg.src = logoNegro;
+        } else {
+            header.classList.remove('scrolled');
+            logoImg.src = logoBlanco;
+        }
+
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+    updateHeader();
+});
+
 let animationTimeout;
 
 function startAnimation() {
@@ -25,8 +89,8 @@ function startAnimation() {
     const sequence = [
         { element: images[0], delay: 0 },     // Imagen 1 - inmediato
         { element: images[3], delay: 500 },   // Imagen 4 - 0.5s
-        { element: images[1], delay: 1000 },  // Imagen 2 - 1s
-        { element: images[2], delay: 1500 }   // Imagen 3 - 1.5s
+        { element: images[1], delay: 800 },  // Imagen 2 - 1s
+        { element: images[2], delay: 1200 }   // Imagen 3 - 1.5s
     ];
 
     sequence.forEach(({ element, delay }) => {
@@ -47,8 +111,8 @@ function startAnimation() {
     // Secuencia de animaciones del logo después de 2 segundos
     const logoSequence = [
         { element: logoParts[0], delay: 2000 },    // Parte 1 - lateral izq (arriba)
-        { element: logoParts[1], delay: 2300 },    // Parte 2 - central (abajo)
-        { element: logoParts[2], delay: 2600 }     // Parte 3 - lateral der (arriba)
+        { element: logoParts[1], delay: 2100 },    // Parte 2 - central (abajo)
+        { element: logoParts[2], delay: 2200 }     // Parte 3 - lateral der (arriba)
     ];
 
     logoSequence.forEach(({ element, delay }) => {
@@ -66,16 +130,4 @@ function startAnimation() {
     });
 }
 
-function restartAnimation() {
-    startAnimation();
-}
-
-// Iniciar animación al cargar la página
 window.addEventListener('load', startAnimation);
-
-// También reiniciar si se hace click en cualquier lugar
-document.addEventListener('click', (e) => {
-    if (!e.target.classList.contains('restart-btn')) {
-        startAnimation();
-    }
-});
